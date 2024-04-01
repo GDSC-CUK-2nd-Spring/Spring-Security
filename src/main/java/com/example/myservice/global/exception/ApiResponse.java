@@ -29,8 +29,8 @@ public class ApiResponse<T> {
     }
 
     public ApiResponse(ApiResponseStatus status){
-        this.isSuccess = SUCCESS.isSuccess();
-        this.message = SUCCESS.getMessage();
-        this.code = SUCCESS.getCode();
+        this.isSuccess = status.isSuccess();
+        this.message = status.getMessage();
+        this.code = status.getCode();
     }
 }

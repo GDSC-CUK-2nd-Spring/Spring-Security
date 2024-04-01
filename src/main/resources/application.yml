@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/[Database 스키마]
+    username: [ DB 아이디 ]
+    password: [ DB 비밀번호 ]
+    driver-class-name: [ JDBC 드라이버 ]
   security:
     oauth2:
       resourceserver:
