@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/myservice_db
+    username: root
+    password: 1225
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    oauth2:
+      resourceserver:
+
+app:
+  jwt:
+    secretKey: 135b8378904571a649516713c9b3bbffc14f3464a3131504aec324cde5327b4d
