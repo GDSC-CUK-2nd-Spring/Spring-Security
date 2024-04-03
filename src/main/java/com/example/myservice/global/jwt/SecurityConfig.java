@@ -21,12 +21,12 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)          //csrf 보호 비활성화  -> RESTful API에서는 클라이언트가 서버와 상태를 유지하지 않는 경우가 많으며, 이 경우 CSRF 보호는 불필요
                 .sessionManagement((sessionManagement) -> sessionManagement
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )       //jwt인증에서는 세션을 사용하지 않기에 세션 생성x
+                )       //jwt인증에서는 세션을 사용하지 않기에 세션 생성x 하도록
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
                         .requestMatchers("/api/auth/signup/**").permitAll()     //해당 경로 요청에서는 인증 없이 접근 허용
                         .anyRequest().authenticated()       //그외 모든 요청 인증 요구
                 );
-                //.addFilterBefore()        //JwtTokenFilter를 UsernamePasswordAuthenticationFilter 앞에 추가
+                //.addFilterBefore()        //사용자 정의 필터를 UsernamePasswordAuthenticationFilter 앞에 추가
 
         return httpSecurity.build();
     }
